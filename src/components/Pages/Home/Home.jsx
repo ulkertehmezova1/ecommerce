@@ -12,7 +12,7 @@ import center from '../../../assets/images/categories/center.jpg'
 function Home() {
 
 
-    const { mainSlider, why, categories1, categories2 } = useSelector(state => state.reducerZohrab);
+    const { mainSlider, why, categories1, categories2,products } = useSelector(state => state.reducerZohrab);
 
     let homeProducts = products.slice(0, 9);
 
