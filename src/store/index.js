@@ -8,6 +8,19 @@ import fruits from '../assets/images/categories/fruits.jpg'
 import juice from '../assets/images/categories/juice.jpg'
 import vege from '../assets/images/categories/vege.jpg'
 import dried from '../assets/images/categories/dried.jpg'
+import prod1 from '../assets/images/products/prod_1.webp'
+import prod2 from '../assets/images/products/prod_2.webp'
+import prod3 from '../assets/images/products/prod_3.webp'
+import prod4 from '../assets/images/products/prod_4.webp'
+import prod5 from '../assets/images/products/prod_5.webp'
+import prod6 from '../assets/images/products/prod_6.webp'
+import prod7 from '../assets/images/products/prod_7.webp'
+import prod8 from '../assets/images/products/prod_8.webp'
+import prod9 from '../assets/images/products/prod_9.webp'
+import prod10 from '../assets/images/products/prod_10.webp'
+import prod11 from '../assets/images/products/prod_11.webp'
+import prod12 from '../assets/images/products/prod_12.webp'
+
 
 
 const initState = {
@@ -79,6 +92,83 @@ const initState = {
             alt: 'Dried'
         }
     ],
+    products: [
+        {
+            id: 1,
+            img: prod1,
+            name: 'bell pepper',
+            prevPrice: 120,
+            price: 80
+        },
+        {
+            id: 2,
+            img: prod2,
+            name: 'strawberry',
+            price: 120
+        },
+        {
+            id: 3,
+            img: prod3,
+            name: 'green beans',
+            price: 120
+        },
+        {
+            id: 4,
+            img: prod4,
+            name: 'purple cabbage',
+            price: 120
+        },
+        {
+            id: 5,
+            img: prod5,
+            name: 'tomatoe',
+            prevPrice: 120,
+            price: 80
+        },
+        {
+            id: 6,
+            img: prod6,
+            name: 'brocolli',
+            price: 120
+        },
+        {
+            id: 7,
+            img: prod7,
+            name: 'carrots',
+            price: 120
+        },
+        {
+            id: 8,
+            img: prod8,
+            name: 'fruit juice',
+            price: 120
+        },
+        {
+            id: 9,
+            img: prod9,
+            name: 'onion',
+            prevPrice: 120,
+            price: 80
+        },
+        {
+            id: 10,
+            img: prod10,
+            name: 'apple',
+            price: 120
+        },
+        {
+            id: 11,
+            img: prod11,
+            name: 'garlic',
+            price: 120
+        },
+        {
+            id: 12,
+            img: prod12,
+            name: 'chilli',
+            price: 120
+        }
+    ]
 }
 
 export default function reducer(state = initState) {
