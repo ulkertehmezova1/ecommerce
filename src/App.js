@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import logo from './logo.svg';
 import './App.css';
 
@@ -19,6 +20,8 @@ function App() {
         </a>
       </header>
     </div>
+
+>>>>>>> f846549bdf58accd432feaacf5e0cc688f6a0e96
   );
 }
 
