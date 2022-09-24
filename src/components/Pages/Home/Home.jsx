@@ -5,12 +5,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { EffectFade, Autoplay } from "swiper";
+import center from '../../../assets/images/categories/center.jpg'
 
 
 
 function Home() {
 
+
     const { mainSlider, why, categories1, categories2 } = useSelector(state => state.reducerZohrab);
+
+    let homeProducts = products.slice(0, 9);
+
 
 
     return (
@@ -63,33 +68,77 @@ function Home() {
                         }
                     </div>
                 </div>
-                <div className={h.container}>
-                    <div className={h.vege}>
-                        {
-                            categories1.map(e => (
-                                <div className={h.category}>
-                                    <img src={e.img} alt={e.alt} />
-                                    <span>
-                                        {e.name}
-                                    </span>
+                <div className={h.section1}>
+                    <div className={h.container}>
+                        <div className={h.vege}>
+                            {
+                                categories1.map(e => (
+                                    <div className={h.category}>
+                                        <img src={e.img} alt={e.alt} />
+                                        <span>
+                                            {e.name}
+                                        </span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div className={h.vege}>
+                            <div className={h.category}>
+                                <img src={center} alt='Vegetables' />
+                                <div className={h.vege_info}>
+                                    <h2>Vegetables</h2>
+                                    <p>Protect the health of every home</p>
+                                    <div className={h.btn} style={{ textTransform: 'none' }}>
+                                        Shop now
+                                    </div>
                                 </div>
-                            ))
-                        }
+                            </div>
+                        </div>
+                        <div className={h.vege}>
+                            {
+                                categories2.map(e => (
+                                    <div className={h.category}>
+                                        <img src={e.img} alt={e.alt} />
+                                        <span>
+                                            {e.name}
+                                        </span>
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
-                    <div className={h.vege}>
-
-                    </div>
-                    <div className={h.vege}>
-                        {
-                            categories2.map(e => (
-                                <div className={h.category}>
-                                    <img src={e.img} alt={e.alt} />
-                                    <span>
-                                        {e.name}
-                                    </span>
-                                </div>
-                            ))
-                        }
+                </div>
+                <div className={h.section2}>
+                    <div className={h.container + ' ' + h.our_products}>
+                        <span>
+                            Featured Products
+                        </span>
+                        <h2>
+                            Our Products
+                        </h2>
+                        <p>
+                            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+                        </p>
+                        <div className={h.container + ' ' + h.products}>
+                            {
+                                homeProducts.map(e => (
+                                    <div className={h.product} key={e.id}>
+                                        <img src={e.img} alt="Product" />
+                                        <h3>
+                                            {e.name}
+                                        </h3>
+                                        <p className={h.prod_price}>
+                                            <p style={{ textDecoration: 'line-through', color: '#aeaeae' }}>
+                                                {e.prevPrice ? `$ ${e.prevPrice}` : ''}
+                                            </p>
+                                            <p style={{color: '#82ae46' }}>
+                                                $ {e.price}
+                                            </p>
+                                        </p>
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
