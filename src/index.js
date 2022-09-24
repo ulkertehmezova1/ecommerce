@@ -7,8 +7,9 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducer from './store/index'
 import AppRouter from './components/router/AppRouter';
+import { rootReducer } from './redux/rootReducer';
 
-const str = createStore(reducer);
+const str = createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -10,7 +10,7 @@ import { EffectFade, Autoplay } from "swiper";
 
 function Home() {
 
-    const { mainSlider, why, categories1, categories2 } = useSelector(state => state);
+    const { mainSlider, why, categories1, categories2 } = useSelector(state => state.reducerZohrab);
 
 
     return (
