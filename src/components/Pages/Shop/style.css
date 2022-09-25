@@ -7,6 +7,7 @@
   font-size: 15px;
   font-weight: 400;
   padding: 10px;
+  -webkit-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out;
 }
 .product button {
@@ -35,6 +36,7 @@
 .img-fluid {
   max-width: 100%;
   height: auto;
+  -webkit-transition: 0.5s all ease-in-out;
   transition: 0.5s all ease-in-out;
 }
 
@@ -44,6 +46,7 @@
   width: 100%;
   background-color: #fff;
 }
+
 .text h3 {
   color: #000;
   font-weight: 300;
@@ -51,6 +54,8 @@
 }
 
 .d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
 }
 
@@ -73,6 +78,7 @@
   color: white;
   font-size: 20px;
 }
+
 .overlay .icon {
   background-color: #82ae46;
   border-radius: 50%;
@@ -83,14 +89,21 @@
 }
 
 .product:hover .overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 10px;
 }
+
 .product:hover .d-flex {
   display: none !important;
 }
 
 .img-fluid:hover {
-  transform: scale(1.2);
-}/*# sourceMappingURL=style.css.map */
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/*# sourceMappingURL=style.css.map */
