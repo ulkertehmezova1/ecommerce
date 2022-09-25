@@ -8,7 +8,6 @@ import { EffectFade, Autoplay } from "swiper";
 import center from '../../../assets/images/categories/center.jpg'
 
 
-
 function Home() {
 
     const { mainSlider, why, categories1, categories2, products } = useSelector(state => state);
