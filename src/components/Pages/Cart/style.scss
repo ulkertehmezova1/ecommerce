@@ -1,0 +1,27 @@
+.img-table{
+    width: 200px;
+}
+.div-table{
+    display: flex;
+    width: 100px;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: whitesmoke;
+}
+p{
+    margin: 0;
+}
+.table-cart{
+    .MuiTableHead-root{
+        background-color: #82AE46;
+        padding: 20px 10px;
+        .MuiTableCell-root{
+            color:#fff;
+            font-family: "Poppins";
+        }
+    }
+}
+.table-cart{
+    padding: 20px;
+}
