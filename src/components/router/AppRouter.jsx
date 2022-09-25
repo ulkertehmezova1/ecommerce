@@ -5,6 +5,7 @@ import Header from '../Header/Header'
 import {Cart} from '../Pages/Cart/index'
 import Home from '../Pages/Home/Home'
 import { Shop } from '../Pages/Shop'
+import { SingleProduct } from '../Pages/SingleProduct'
 
 
 function AppRouter() {
@@ -15,6 +16,7 @@ function AppRouter() {
           <Route path='/' element={<Home />} />
           <Route path="/cart" element={<Cart />}/>
           <Route path="/shop" element={< Shop/>}/>
+          <Route path="/singlepro" element={<SingleProduct />} />
         </Routes>
         <Footer />
     </div>

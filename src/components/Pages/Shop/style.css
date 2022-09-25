@@ -9,6 +9,10 @@
   padding: 10px;
   transition: 0.5s all ease-in-out;
 }
+.product button {
+  all: unset;
+  cursor: pointer;
+}
 
 .img-prod {
   position: relative;
