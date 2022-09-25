@@ -5,8 +5,19 @@ import Grid from '@mui/material/Grid';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { products } from '../../../store/products.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const Shop = () => {
+  const card=useSelector((state)=>state.card);
+    
+    const dispatch=useDispatch();
+
+    const addCart=(item)=>{
+    dispatch({type:"ADD", payload:item});
+    }
+    
+
   return (
     <div style={{padding:"30px"}}>
     <Grid container>
@@ -32,7 +43,7 @@ export const Shop = () => {
             </div>
         </div>
         <div className='overlay'>
-            <div className='icon'><ShoppingCartIcon /></div>
+           <Link to='/cart'><div className='icon' onClick={()=>addCart(product)}><button ><ShoppingCartIcon /></button></div></Link>
             <div className='icon'><FavoriteIcon /></div>
         </div>
     </div>
