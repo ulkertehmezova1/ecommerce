@@ -7,6 +7,7 @@ import Contact from '../Pages/Contact/Contact'
 import Home from '../Pages/Home/Home'
 import { Shop } from '../Pages/Shop'
 import { SingleProduct } from '../Pages/SingleProduct'
+import WishList from '../Pages/WishList'
 
 
 function AppRouter() {
@@ -19,6 +20,8 @@ function AppRouter() {
           <Route path="/cart" element={<Cart />}/>
           <Route path="/shop" element={< Shop/>}/>
           <Route path="/singleproduct" element={<SingleProduct />} />
+          <Route path="/wishlist" element={<WishList />} />
+
         </Routes>
         <Footer />
     </div>
