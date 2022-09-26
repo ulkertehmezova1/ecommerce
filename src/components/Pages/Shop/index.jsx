@@ -6,6 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { products } from '../../../store/products.js';
 import { useDispatch, useSelector } from 'react-redux';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
 export const Shop = () => {
@@ -57,7 +58,7 @@ export const Shop = () => {
         </div>
         <div className='overlay'>
            <Link to='/cart'><div className='icon' onClick={()=>addCart(product)}><button ><ShoppingCartIcon /></button></div></Link>
-            <div className='icon'><FavoriteIcon /></div>
+           <Link to="/singleproduct"><div className='icon' onClick={()=>dispatch({type:"SINGLE", payload:product})}><button><MenuIcon /></button></div></Link> 
         </div>
     </div>
 </div>

@@ -6,11 +6,20 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { EffectFade, Autoplay } from "swiper";
 import center from '../../../assets/images/categories/center.jpg'
+import {products} from '../../../store/products'
 import Timer from './Timer';
+import { useDispatch} from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
+    const dispatch=useDispatch();
 
-    const { why, categories1, categories2, products } = useSelector(state => state.reducerZohrab);
+    const addCart=(item)=>{
+    dispatch({type:"ADD", payload:item});
+    }
+
+    const { why, categories1, categories2 } = useSelector(state => state.reducerZohrab);
     let homeProducts = products.slice(0, 8);
 
 
@@ -56,7 +65,7 @@ function Home() {
                 <div className={h.why_section}>
                     <div className={h.container}>
                         {
-                            why.map((e, i) => (
+                            why?.map((e, i) => (
                                 <div className={h.item} key={i}>
                                     <div className={h.icon} style={{ backgroundColor: e.bg }}>
                                         <img src={e.icon} alt={e.alt} />
@@ -76,7 +85,7 @@ function Home() {
                     <div className={h.container}>
                         <div className={h.vege}>
                             {
-                                categories1.map((e, i) => (
+                                categories1?.map((e, i) => (
                                     <div className={h.category} key={i}>
                                         <img src={e.img} alt={e.alt} />
                                         <span>
@@ -104,7 +113,7 @@ function Home() {
                         </div>
                         <div className={h.vege}>
                             {
-                                categories2.map((e, i) => (
+                                categories2?.map((e, i) => (
                                     <div className={h.category} key={i}>
                                         <img src={e.img} alt={e.alt} />
                                         <span>
@@ -129,24 +138,29 @@ function Home() {
                         </p>
                         <div className={h.container + ' ' + h.products}>
                             {
-                                homeProducts.map(e => (
+                                products?.slice(0,8).map(e => (
                                     <div className={h.product} key={e.id}>
-                                        <img src={e.img} alt="Product" />
+                                     <Link to="/singleproduct"><img src={require(`../../../assets/images/products/${e.image}`)}
+                                       onClick={()=>dispatch({type:"SINGLE", payload:e})}
+                                      />
+                                      </Link> 
                                         <h3>
                                             {e.name}
                                         </h3>
                                         <p className={h.price}>
                                             <p style={{ textDecoration: 'line-through', color: '#aeaeae' }}>
-                                                {e.prevPrice ? `$ ${e.prevPrice}` : ''}
+                                                {/* {e.prevPrice ? `$ ${e.prevPrice}` : ''} */}
                                             </p>
                                             <p style={{ color: '#82ae46' }}>
                                                 $ {e.price}
                                             </p>
                                         </p>
                                         <div className={h.prod_buttons}>
-                                            <div className={h.prod_btn}> <i className="fa-solid fa-bars"></i> </div>
-                                            <div className={h.prod_btn}> <i className="fa-solid fa-cart-shopping"></i> </div>
-                                            <div className={h.prod_btn}> <i className="fa-solid fa-heart"></i> </div>
+                                            <Link style={{all:"unset"}} to="/singleproduct">
+                                            <div className={h.prod_btn} onClick={()=>dispatch({type:"SINGLE", payload:e})}> <i className="fa-solid fa-bars"></i> </div>
+                                            </Link> 
+                                            <div className={h.prod_btn} onClick={()=>addCart(e)}> <i className="fa-solid fa-cart-shopping"></i> </div>
+                                            {/* <div className={h.prod_btn}> <i className="fa-solid fa-heart"></i> </div> */}
                                         </div>
                                     </div>
                                 ))
