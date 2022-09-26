@@ -59,6 +59,7 @@ export const Shop = () => {
         <div className='overlay'>
            <Link to='/cart'><div className='icon' onClick={()=>addCart(product)}><button ><ShoppingCartIcon /></button></div></Link>
            <Link to="/singleproduct"><div className='icon' onClick={()=>dispatch({type:"SINGLE", payload:product})}><button><MenuIcon /></button></div></Link> 
+           <Link to="/wishlist"><div className='icon' onClick={()=>dispatch({type:"ADDTOWISH", payload:product})}><button><FavoriteIcon /></button></div></Link>
         </div>
     </div>
 </div>
