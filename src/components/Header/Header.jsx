@@ -63,6 +63,8 @@ function Header() {
                   <li><NavLink  activeClassName='active'className="dropdown-item" to="/shop">Shop</NavLink></li>
                   <li><NavLink activeClassName='active' className="dropdown-item" to="/singleproduct">Single Product</NavLink></li>
                   <li><NavLink activeClassName='active' className="dropdown-item" to="/cart">Cart</NavLink></li>
+                  <li><NavLink activeClassName='active' className="dropdown-item" to="/wishlist">Wishlist</NavLink></li>
+
                 </ul>
               </li>
               <li className="nav-item">
