@@ -12,75 +12,75 @@ import './style.css'
 
 export const Cart = () => {
 
-  const card=useSelector((state)=>state.card);
-  const dispatch=useDispatch();
-  
+  const card = useSelector((state) => state.card);
+  const dispatch = useDispatch();
 
-  const total=card.reduce((acc,curr)=>(acc+curr.price*curr.quantity),0);
 
-  const handleRemove=(item)=>{
-    dispatch({type:"REMOVE", payload:item})
+  const total = card.reduce((acc, curr) => (acc + curr.price * curr.quantity), 0);
+
+  const handleRemove = (item) => {
+    dispatch({ type: "REMOVE", payload: item })
   }
-  const handleIncrease=(item)=>{
-    dispatch({type:"INCREASE", payload:item})
+  const handleIncrease = (item) => {
+    dispatch({ type: "INCREASE", payload: item })
   }
 
-  const handleDecrease=(item)=>{
-    if(item.quantity>1){
-    dispatch({type:"DECREASE", payload:item})
-    }else{
-    dispatch({type:"REMOVE", payload:item})
+  const handleDecrease = (item) => {
+    if (item.quantity > 1) {
+      dispatch({ type: "DECREASE", payload: item })
+    } else {
+      dispatch({ type: "REMOVE", payload: item })
 
     }
   }
   return (
-  
+
     <div className='table-cart'>
-<TableContainer
-component={Paper}
->
-<Table aria-label="customized table">
-<TableHead>
-  <TableRow>
-    <TableCell></TableCell>
-    <TableCell></TableCell>
-    <TableCell>Product name</TableCell>
-    <TableCell>Price</TableCell>
-    <TableCell>Quantity</TableCell>
-    <TableCell>Total</TableCell>
-  </TableRow>
-</TableHead>
-<TableBody>
+      <TableContainer
+        component={Paper}
+      >
+        <Table aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell>Product name</TableCell>
+              <TableCell>Price</TableCell>
+              <TableCell>Quantity</TableCell>
+              <TableCell>Total</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
 
-{
-  card?.map((product)=>(
+            {
+              card?.map((product) => (
 
-    <TableRow>
-      <TableCell><button style={{all:"unset"}} onClick={()=>handleRemove(product)}><ClearIcon /></button></TableCell>
-      <TableCell>
-        <img className='img-table' src={require(`../../../assets/images/products/${product.image}`)} />
-      </TableCell>
-      <TableCell>
-{product.name}
-      </TableCell>
-      <TableCell>
-{product.price}
-      </TableCell>
-      <TableCell>
-       <div className='div-table'>
-        <button style={{all:"unset"}} onClick={()=>handleIncrease(product)}>+</button>
-        <p>{product.quantity}</p>
-        <button style={{all:"unset"}} onClick={()=>handleDecrease(product)}>-</button>
-       </div>
-      </TableCell>
-      <TableCell>{product.price*product.quantity}</TableCell>
-    </TableRow>
-  ))
-}
+                <TableRow>
+                  <TableCell><button style={{ all: "unset" }} onClick={() => handleRemove(product)}><ClearIcon /></button></TableCell>
+                  <TableCell>
+                    <img className='img-table' src={require(`../../../assets/images/products/${product.image}`)} />
+                  </TableCell>
+                  <TableCell>
+                    {product.name}
+                  </TableCell>
+                  <TableCell>
+                    {product.price}
+                  </TableCell>
+                  <TableCell>
+                    <div className='div-table'>
+                      <button style={{ all: "unset" }} onClick={() => handleIncrease(product)}>+</button>
+                      <p>{product.quantity}</p>
+                      <button style={{ all: "unset" }} onClick={() => handleDecrease(product)}>-</button>
+                    </div>
+                  </TableCell>
+                  <TableCell>{product.price * product.quantity}</TableCell>
+                </TableRow>
+              ))
+            }
 
-</TableBody>
-</Table>
-</TableContainer>
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   )
 }
