@@ -18,6 +18,15 @@ import prod9 from '../assets/images/products/prod_9.webp'
 import prod10 from '../assets/images/products/prod_10.webp'
 import prod11 from '../assets/images/products/prod_11.webp'
 import prod12 from '../assets/images/products/prod_12.webp'
+import customer1 from '../assets/images/customers/person1.webp'
+import customer2 from '../assets/images/customers/person2.webp'
+import customer3 from '../assets/images/customers/person3.webp'
+import partner1 from '../assets/images/partners/partner1.webp'
+import partner2 from '../assets/images/partners/partner2.webp'
+import partner3 from '../assets/images/partners/partner3.webp'
+import partner4 from '../assets/images/partners/partner4.webp'
+import partner5 from '../assets/images/partners/partner5.webp'
+
 
 const initState = {
     why: [
@@ -26,28 +35,32 @@ const initState = {
             heading: 'free shipping',
             span: 'on order over 100 $',
             alt: 'Free shipping',
-            bg: '#e4b2d6'
+            bg: '#e4b2d6',
+            delay: 0
         },
         {
             icon: diet,
             heading: 'always fresh',
             span: 'products well package',
             alt: 'Always Fresh',
-            bg: '#dcc698'
+            bg: '#dcc698',
+            delay: 100
         },
         {
             icon: award,
             heading: 'superior quality',
             span: 'quality products',
             alt: 'Superior quality',
-            bg: '#a2d1e1'
+            bg: '#a2d1e1',
+            delay: 200
         },
         {
             icon: customer,
             heading: 'support',
             span: '24/7 support',
             alt: 'Customer Service',
-            bg: '#dcd691'
+            bg: '#dcd691',
+            delay: 300
         }
     ],
     categories1: [
@@ -80,50 +93,61 @@ const initState = {
             img: prod1,
             name: 'bell pepper',
             prevPrice: 120,
-            price: 80
+            price: 80,
+            sale: '30%',
+            delay: 0
         },
         {
             id: 2,
             img: prod2,
             name: 'strawberry',
-            price: 120
+            price: 120,
+            delay: 100
         },
         {
             id: 3,
             img: prod3,
             name: 'green beans',
-            price: 120
+            price: 120,
+            delay: 200
         },
         {
             id: 4,
             img: prod4,
             name: 'purple cabbage',
-            price: 120
+            price: 120,
+            delay: 300
         },
         {
             id: 5,
             img: prod5,
             name: 'tomatoe',
             prevPrice: 120,
-            price: 80
+            price: 80,
+            sale: '30%',
+            delay: 0
         },
         {
             id: 6,
             img: prod6,
             name: 'brocolli',
-            price: 120
+            price: 120,
+            delay: 100
         },
         {
             id: 7,
             img: prod7,
             name: 'carrots',
-            price: 120
+            price: 120,
+            delay: 200
         },
         {
             id: 8,
             img: prod8,
             name: 'fruit juice',
-            price: 120
+            price: 120,
+            sale: '30%',
+            delay: 300
         },
         {
             id: 9,
@@ -151,6 +175,71 @@ const initState = {
             price: 120
         }
     ],
+    customers: [
+        {
+            img: customer1,
+            text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+            name: 'Garret Smith',
+            prof: 'web designer'
+        },
+        {
+            img: customer2,
+            text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+            name: 'John Wick',
+            prof: 'marketing manager'
+        },
+        {
+            img: customer3,
+            text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+            name: 'Arturo Vidal',
+            prof: 'system analyst'
+        },
+        {
+            img: customer1,
+            text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+            name: 'Garret Smith',
+            prof: 'web designer'
+        },
+        {
+            img: customer2,
+            text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+            name: 'John Wick',
+            prof: 'marketing manager'
+        },
+        {
+            img: customer3,
+            text: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
+            name: 'Arturo Vidal',
+            prof: 'system analyst'
+        }
+    ],
+    partners: [
+        {
+            img: partner1,
+            link: 'https://www.microsoft.com/en-us/',
+            delay: 0
+        },
+        {
+            img: partner2,
+            link: 'https://www.android.com/',
+            delay: 100
+        },
+        {
+            img: partner3,
+            link: 'https://www.java.com/',
+            delay: 200
+        },
+        {
+            img: partner4,
+            link: 'https://www.google.com/',
+            delay: 300
+        },
+        {
+            img: partner5,
+            link: 'https://www.adobe.com/',
+            delay: 400
+        }
+    ]
 }
 
 export default function reducer(state = initState) {
