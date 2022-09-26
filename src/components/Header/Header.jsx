@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../Header/header.css'
+import {useSelector} from 'react-redux';
 
 function Header() { 
  const [sticky,setSticky] =useState('');
+ const card=useSelector((state)=>state.card);
 
  useEffect(() => {
    window.addEventListener('scroll', isSticky);
@@ -74,7 +76,7 @@ function Header() {
               </li>
             </ul>
             <div className="d-flex icon-cart">
-              <NavLink to='/cart'><button className="btn" activeClassName='active' type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[0]</span></button></NavLink>
+              <NavLink to='/cart'><button className="btn" activeClassName='active' type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[{card?.length}]</span></button></NavLink>
             </div>
           </div>
         </div>
