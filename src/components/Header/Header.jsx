@@ -1,9 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../Header/header.css'
 
 function Header() { 
- //const [sticky,setSticky] =useState()
+ const [sticky,setSticky] =useState('');
+
+ useEffect(() => {
+   window.addEventListener('scroll', isSticky);
+ 
+   return () => {
+     window.removeEventListener('scroll',isSticky);
+   };
+ }, []);
+
+ const isSticky =()=>{
+  const scrollTop = window.scrollY;
+  const stickyClass = scrollTop >=250 ? 'is-sticky' : '';
+  setSticky(stickyClass);
+
+ };
+ const classes = `header-bottom  ${sticky}`;
+
+ 
 
   return (
     <div className='header'>
@@ -22,7 +40,7 @@ function Header() {
      </div>
     </div>
 
-    <div className="header-bottom">
+    <div className={classes}>
     <nav className="navbar navbar-expand-md bg-light py-0">
         <div className="container">
           <Link className="navbar-brand" to="/">VegeFoods</Link>
@@ -41,10 +59,8 @@ function Header() {
                 </NavLink>
                 <ul className="dropdown-menu">
                   <li><NavLink  activeClassName='active'className="dropdown-item" to="/shop">Shop</NavLink></li>
-                  <li><NavLink activeClassName='active' className="dropdown-item" to="/wishlist">Wishlist</NavLink></li>
-                  <li><NavLink activeClassName='active' className="dropdown-item" to="/singleproduct">Single Product</NavLink></li>
+                  <li><NavLink activeClassName='active' className="dropdown-item" to="/singlepro">Single Product</NavLink></li>
                   <li><NavLink activeClassName='active' className="dropdown-item" to="/cart">Cart</NavLink></li>
-                  <li><NavLink activeClassName='active' className="dropdown-item" to="/checkout">Checkout</NavLink></li>
                 </ul>
               </li>
               <li className="nav-item">

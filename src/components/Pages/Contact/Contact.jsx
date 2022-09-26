@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import bg from '../../../assets/images/slider/slider_1.jpg'
 import '../Contact/contact.css'
+import ContactSection1 from './ContactSection1'
 
 
 function Contact() {
@@ -25,6 +26,7 @@ function Contact() {
           </Link>
         </div>
      </div>
+     <ContactSection1/>
 
     </div>
   )

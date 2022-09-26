@@ -59,4 +59,9 @@
 .contact-page .bg .container .pages-link .link:hover {
   color: #82ae46;
 }
+
+.contact-page .con-sec1 {
+  position: relative;
+  padding: 50px 0;
+}
 /*# sourceMappingURL=contact.css.map */

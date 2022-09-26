@@ -4,6 +4,58 @@
   margin-top: 0;
 }
 
+.is-sticky {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff !important;
+  -webkit-animation: fadeIn 1s ease-in both;
+          animation: fadeIn 1s ease-in both;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.is-sticky .navbar-brand {
+  color: #000 !important;
+}
+
+.is-sticky .icon-cart {
+  background-color: #82ae46;
+}
+
+.is-sticky .icon-cart .btn {
+  color: #fff  !important;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20%, 0);
+            transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20%, 0);
+            transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
 .header {
   position: relative;
 }
