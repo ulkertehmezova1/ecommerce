@@ -9,51 +9,51 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export const Shop = () => {
-  const card=useSelector((state)=>state.card);
-    
-    const dispatch=useDispatch();
+    const card = useSelector((state) => state.card);
 
-    const addCart=(item)=>{
-    dispatch({type:"ADD", payload:item});
+    const dispatch = useDispatch();
+
+    const addCart = (item) => {
+        dispatch({ type: "ADD", payload: item });
     }
-    
 
-  return (
-    <div style={{padding:"30px"}}>
-    <Grid container>
-{
-    products.map((product)=>(
 
-        <Grid item lg={3} md={4} xs={12} sm={12}  >
-<div className='product'>
-    <a className='img-prod'>
-        <img className='img-fluid' src={require(`../../../assets/images/products/${product.image}`)} />
-        <span className='status'>30%</span>
-     
-    </a>
-    <div className='text'>
-        <h3>
-        {product.name}
-        </h3>
-        <div className='d-flex'>
-            <div className='pricing'>
-                <p className='price'>
-                    <span>{`$ ${product.price}`}</span>
-                </p>
-            </div>
+    return (
+        <div style={{ padding: "30px" }}>
+            <Grid container>
+                {
+                    products.map((product) => (
+
+                        <Grid item lg={3} md={4} xs={12} sm={12}  >
+                            <div className='product'>
+                                <a className='img-prod'>
+                                    <img className='img-fluid' src={require(`../../../assets/images/products/${product.image}`)} />
+                                    <span className='status'>30%</span>
+
+                                </a>
+                                <div className='text'>
+                                    <h3>
+                                        {product.name}
+                                    </h3>
+                                    <div className='d-flex'>
+                                        <div className='pricing'>
+                                            <p className='price'>
+                                                <span>{`$ ${product.price}`}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='overlay'>
+                                        <Link to='/cart'><div className='icon' onClick={() => addCart(product)}><button ><ShoppingCartIcon /></button></div></Link>
+                                        <div className='icon'><FavoriteIcon /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Grid>
+                    ))
+                }
+
+            </Grid>
+
         </div>
-        <div className='overlay'>
-           <Link to='/cart'><div className='icon' onClick={()=>addCart(product)}><button ><ShoppingCartIcon /></button></div></Link>
-            <div className='icon'><FavoriteIcon /></div>
-        </div>
-    </div>
-</div>
-</Grid>
-    ))
-}
-
-</Grid>
-
-    </div>
-  )
+    )
 }
