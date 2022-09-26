@@ -1,5 +1,3 @@
-import slider1 from '../assets/images/slider/slider_1.jpg'
-import slider2 from '../assets/images/slider/slider_2.jpg'
 import award from '../assets/icons/award.png'
 import customer from '../assets/icons/customer.png'
 import diet from '../assets/icons/diet.png'
@@ -21,23 +19,7 @@ import prod10 from '../assets/images/products/prod_10.webp'
 import prod11 from '../assets/images/products/prod_11.webp'
 import prod12 from '../assets/images/products/prod_12.webp'
 
-
-
 const initState = {
-    mainSlider: [
-        {
-            text: 'we serve fresh vegetables & fruits',
-            p: 'we deliver organic vegetables & fruits',
-            img: slider1,
-            alt: 'slider_background_1'
-        },
-        {
-            text: '100% fresh & organic foods',
-            p: 'we deliver organic vegetables & fruits',
-            img: slider2,
-            alt: 'slider_background_2'
-        },
-    ],
     why: [
         {
             icon: shipping,
@@ -168,7 +150,7 @@ const initState = {
             name: 'chilli',
             price: 120
         }
-    ]
+    ],
 }
 
 export default function reducer(state = initState) {
