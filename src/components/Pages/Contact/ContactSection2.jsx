@@ -55,7 +55,7 @@ function ContactSection2() {
                                 </div>
 
                                     <div className="form-group">
-                                        <textarea name="message"className="form-control" cols={10} rows={5} placeholder="Your Message" required />
+                                        <textarea name="message"className="form-control" cols={30} rows={7} placeholder="Your Message" required />
                                     </div>
 
                                     <div className="submit-form">

@@ -6,12 +6,10 @@ function ContactSection1() {
   return (
     <div className='con-sec1'>
       <div className="container">
-        <div className="row">
+        <div className="row mb-5 d-flex">
         {contact.map((contact)=>(
-            <div className="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-12">
-              
-                
-                <div className="info">
+            <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 info-group">
+                <div className="info p-4">
                     <p>
                         <span>{contact.title}</span>
                         <a href={contact.url} target="_blank" rel="noopener noreferrer">{contact.desc}</a>
