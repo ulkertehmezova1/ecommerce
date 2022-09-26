@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+.contact-page {
+  position: relative;
+}
+
+.contact-page .bg {
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-page .bg .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-page .bg .container .title {
+  text-decoration: none;
+  color: white;
+}
+
+.contact-page .bg .container .title1 {
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-page .bg .container .pages-link {
+  font-size: 1rem;
+}
+
+.contact-page .bg .container .pages-link .link {
+  text-decoration: none;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+.contact-page .bg .container .pages-link .link:hover {
+  color: #82ae46;
+}
+
+.contact-page .con-sec1 {
+  position: relative;
+  padding: 50px 0;
+}
+/*# sourceMappingURL=contact.css.map */
