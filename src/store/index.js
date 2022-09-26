@@ -2,10 +2,6 @@ import award from '../assets/icons/award.png'
 import customer from '../assets/icons/customer.png'
 import diet from '../assets/icons/diet.png'
 import shipping from '../assets/icons/shipping.png'
-import fruits from '../assets/images/categories/fruits.jpg'
-import juice from '../assets/images/categories/juice.jpg'
-import vege from '../assets/images/categories/vege.jpg'
-import dried from '../assets/images/categories/dried.jpg'
 import prod1 from '../assets/images/products/prod_1.webp'
 import prod2 from '../assets/images/products/prod_2.webp'
 import prod3 from '../assets/images/products/prod_3.webp'
@@ -66,25 +62,25 @@ const initState = {
     categories1: [
         {
             name: "fruits",
-            img: fruits,
-            alt: 'Fruits'
+            alt: 'Fruits',
+            id: 'fruits_category'
         },
         {
             name: "vegetables",
-            img: vege,
-            alt: 'Vegetables'
+            alt: 'Vegetables',
+            id: 'vegetables_category'
         }
     ],
     categories2: [
         {
             name: "juices",
-            img: juice,
-            alt: 'Juices'
+            alt: 'Juices',
+            id: 'juices_category'
         },
         {
             name: "dried",
-            img: dried,
-            alt: 'Dried'
+            alt: 'Dried',
+            id: 'dried_category'
         }
     ],
     products: [

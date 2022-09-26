@@ -8,10 +8,9 @@ import './homestyle.css'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import center from '../../../assets/images/categories/center.jpg'
 import { products } from '../../../store/products'
 import Timer from './Timer';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -89,7 +88,7 @@ function Home() {
                     </SwiperSlide>
                 </Swiper>
                 <div className={h.why_section}>
-                    <div className={h.container}>
+                    <div className={h.container + ' ' + h.why_page}>
                         {
                             why.map((e, i) => (
                                 <div className={h.item} key={i} data-aos="fade-up" data-aos-delay={e.delay}>
@@ -108,12 +107,11 @@ function Home() {
                     </div>
                 </div>
                 <div className={h.section1}>
-                    <div className={h.container}>
+                    <div className={h.container + ' ' + h.vege_section}>
                         <div className={h.vege}>
                             {
-                                categories1?.map((e, i) => (
-                                    <div className={h.category} key={i} data-aos='fade-up'>
-                                        <img src={e.img} alt={e.alt} />
+                                categories1.map((e, i) => (
+                                    <div className={h.category} key={i} id={e.id} data-aos='fade-up'>
                                         <span>
                                             {e.name}
                                         </span>
@@ -122,8 +120,7 @@ function Home() {
                             }
                         </div>
                         <div className={h.vege}>
-                            <div className={h.category}>
-                                <img src={center} alt='Vegetables' />
+                            <div className={h.category} id='center_category'>
                                 <div className={h.vege_info}>
                                     <h2 className={h.heading_text} style={{ fontSize: '24px' }}>
                                         Vegetables
@@ -139,9 +136,8 @@ function Home() {
                         </div>
                         <div className={h.vege}>
                             {
-                                categories2?.map((e, i) => (
-                                    <div className={h.category} key={i} data-aos='fade-up'>
-                                        <img src={e.img} alt={e.alt} />
+                                categories2.map((e, i) => (
+                                    <div className={h.category} key={i} id={e.id} data-aos='fade-up'>
                                         <span>
                                             {e.name}
                                         </span>
@@ -242,39 +238,43 @@ function Home() {
                         <p className={h.default_p} data-aos="fade-up" data-aos-delay="100">
                             Far far away, behind the word mountains, far from the countries Vokalia and <br /> Consonantia, there live the blind texts. Separated they live in
                         </p>
-                        <Swiper
-                            slidesPerView={3}
-                            loop={true}
-                            speed={1000}
-                            autoplay={{ delay: 1200 }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            modules={[Pagination, Autoplay]}
-                            className={h.testimony_swiper}
-                        >
-                            {
-                                customers.map((e, i) => (
-                                    <SwiperSlide className={h.testimony_slider} key={i} data-aos="fade-up" data-aos-delay="100">
-                                        <div className={h.image}>
-                                            <img src={e.img} alt="Customer" />
+  
+                            <Swiper
+                                slidesPerView={3}
+                                loop={true}
+                                speed={1000}
+                                autoplay={{ delay: 1200 }}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                modules={[Pagination, Autoplay]}
+                                className={h.testimony_swiper}
+                                data-aos="fade-up" data-aos-delay="100"
+                            >
+                                {
+                                    customers.map((e, i) => (
+                                        <SwiperSlide className={h.testimony_slider} key={i}>
+                                            <div className={h.image}>
+                                                <img src={e.img} alt="Customer" />
+                                                <span>
+                                                    <i className="fa-solid fa-quote-left"></i>
+                                                </span>
+                                            </div>
+                                            <p className={h.default_p}>
+                                                {e.text}
+                                            </p>
+                                            <h4>
+                                                {e.name}
+                                            </h4>
                                             <span>
-                                                <i className="fa-solid fa-quote-left"></i>
+                                                {e.prof}
                                             </span>
-                                        </div>
-                                        <p className={h.default_p}>
-                                            {e.text}
-                                        </p>
-                                        <h4>
-                                            {e.name}
-                                        </h4>
-                                        <span>
-                                            {e.prof}
-                                        </span>
-                                    </SwiperSlide>
-                                ))
-                            }
-                        </Swiper>
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </Swiper>
+                     
+
                     </div>
                 </div>
                 <div className={h.section2} style={{ borderTop: '1px solid rgba(0,0,0,.1)' }}>
@@ -289,7 +289,7 @@ function Home() {
                         }
                     </div>
                 </div>
-                <div className={h.last_section}>
+                <div className={h.g}>
                     <div className={h.container}>
                         <div className={h.in_cont}>
                             <h2>
