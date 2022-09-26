@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 export const Shop = () => {
   const card=useSelector((state)=>state.card);
+  const singlepro=useSelector((state)=>state.singleObject);
+  const filteredArr=useSelector((state)=>state.filteredArr);
     
     const dispatch=useDispatch();
 
@@ -17,20 +19,31 @@ export const Shop = () => {
     dispatch({type:"ADD", payload:item});
     }
     
+    console.log(singlepro)
 
   return (
+    <>
+    <div className='div-img'>
+<h1>Products</h1>
+    </div>
+    <div className='button-group'>
+        <button onClick={()=>dispatch({type:"ALL"})}>All</button>
+        <button onClick={()=>dispatch({type:"FILTER", payload:"Vegetables"})}>Vegetables</button>
+        <button onClick={()=>dispatch({type:"FILTER", payload:"Fruits"})}>Fruits</button>
+        <button  onClick={()=>dispatch({type:"FILTER", payload:"Juice"})}>Juice</button>
+    </div>
     <div style={{padding:"30px"}}>
     <Grid container>
 {
-    products.map((product)=>(
+    filteredArr?.map((product)=>(
 
         <Grid item lg={3} md={4} xs={12} sm={12}  >
 <div className='product'>
-    <a className='img-prod'>
+    <Link to="/singleproduct" className='img-prod' onClick={()=>dispatch({type:"SINGLE", payload:product})}>
         <img className='img-fluid' src={require(`../../../assets/images/products/${product.image}`)} />
         <span className='status'>30%</span>
      
-    </a>
+    </Link>
     <div className='text'>
         <h3>
         {product.name}
@@ -55,5 +68,6 @@ export const Shop = () => {
 </Grid>
 
     </div>
+    </>
   )
 }
