@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,20 +9,27 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import center from '../../../assets/images/categories/center.jpg'
+import { products } from '../../../store/products'
 import Timer from './Timer';
+import { useDispatch} from 'react-redux';
 import Swal from 'sweetalert2';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+
 function Home() {
+
+    const dispatch = useDispatch();
 
     AOS.init({
         duration: 500,
         easing: 'ease'
     });
 
-    const { why, categories1, categories2, products, customers, partners } = useSelector(state => state.reducerZohrab);
-    let homeProducts = products.slice(0, 8);
+    const { why, categories1, categories2, customers, partners } = useSelector(state => state.reducerZohrab);
+    const addCart = (item) => {
+        dispatch({ type: "ADD", payload: item });
+    }
 
     const scrollTop = () => {
         window.scrollTo({
@@ -104,8 +111,8 @@ function Home() {
                     <div className={h.container}>
                         <div className={h.vege}>
                             {
-                                categories1.map((e, i) => (
-                                    <div className={h.category} key={i} data-aos="fade-up">
+                                categories1?.map((e, i) => (
+                                    <div className={h.category} key={i} data-aos='fade-up'>
                                         <img src={e.img} alt={e.alt} />
                                         <span>
                                             {e.name}
@@ -132,8 +139,8 @@ function Home() {
                         </div>
                         <div className={h.vege}>
                             {
-                                categories2.map((e, i) => (
-                                    <div className={h.category} key={i} data-aos="fade-up">
+                                categories2?.map((e, i) => (
+                                    <div className={h.category} key={i} data-aos='fade-up'>
                                         <img src={e.img} alt={e.alt} />
                                         <span>
                                             {e.name}
@@ -157,9 +164,12 @@ function Home() {
                         </p>
                         <div className={h.container + ' ' + h.products}>
                             {
-                                homeProducts.map(e => (
+                                products?.slice(0, 8).map(e => (
                                     <div className={h.product} key={e.id} data-aos="zoom-in" data-aos-delay={e.delay}>
-                                        <img src={e.img} alt="Product" />
+                                        <Link to="/singleproduct">
+                                            <img src={require(`../../../assets/images/products/${e.image}`)} alt="Product"
+                                                onClick={() => dispatch({ type: "SINGLE", payload: e })} />
+                                        </Link>
                                         <h3>
                                             {e.name}
                                         </h3>
@@ -172,9 +182,17 @@ function Home() {
                                             </p>
                                         </p>
                                         <div className={h.prod_buttons}>
-                                            <div className={h.prod_btn}> <i className="fa-solid fa-bars"></i> </div>
-                                            <div className={h.prod_btn}> <i className="fa-solid fa-cart-shopping"></i> </div>
-                                            <div className={h.prod_btn}> <i className="fa-solid fa-heart"></i> </div>
+                                            <Link style={{ all: "unset" }} to="/singleproduct">
+                                                <div className={h.prod_btn} onClick={() => dispatch({ type: "SINGLE", payload: e })}>
+                                                    <i className="fa-solid fa-bars"></i>
+                                                </div>
+                                            </Link>
+                                            <div className={h.prod_btn} onClick={() => addCart(e)}>
+                                                <i className="fa-solid fa-cart-shopping"></i>
+                                            </div>
+                                            <div className={h.prod_btn}>
+                                                <i className="fa-solid fa-heart"></i>
+                                            </div>
                                         </div>
                                         {
                                             e.sale &&
@@ -263,7 +281,7 @@ function Home() {
                     <div className={h.container}>
                         {
                             partners.map((e, i) => (
-                                <a href={e.link} className={h.partner} target="_blank" 
+                                <a href={e.link} className={h.partner} target="_blank"
                                     rel="noopener noreferrer" key={i} data-aos="fade-up" data-aos-delay={e.delay}>
                                     <img src={e.img} alt="Partner" />
                                 </a>
