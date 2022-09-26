@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import '../Header/header.css'
+import {useSelector} from 'react-redux';
+
 
 function Header() {
   //const [sticky,setSticky] =useState()
+  const card=useSelector((state)=>state.card);
 
   return (
     <div className='header'>
@@ -58,7 +61,7 @@ function Header() {
                 </li>
               </ul>
               <div className="d-flex">
-                <Link to='/cart'><button className="btn btn-outline-success" type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[0]</span></button></Link>
+                <Link to='/cart'><button className="btn btn-outline-success" type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[{card?.length}]</span></button></Link>
               </div>
             </div>
           </div>
