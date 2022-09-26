@@ -16,7 +16,7 @@ function AppRouter() {
           <Route path='/' element={<Home />} />
           <Route path="/cart" element={<Cart />}/>
           <Route path="/shop" element={< Shop/>}/>
-          <Route path="/singlepro" element={<SingleProduct />} />
+          <Route path="/singleproduct" element={<SingleProduct />} />
         </Routes>
         <Footer />
     </div>
