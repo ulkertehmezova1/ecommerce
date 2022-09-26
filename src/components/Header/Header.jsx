@@ -23,11 +23,11 @@ function Header() {
     </div>
 
     <div className="header-bottom">
-    <nav className="navbar navbar-expand-lg bg-light py-3">
+    <nav className="navbar navbar-expand-md bg-light py-0">
         <div className="container">
           <Link className="navbar-brand" to="/">VegeFoods</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"  />
+            <span className="navbar-icon"><i className="fa-solid fa-bars"></i></span>
             Menu
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,8 +57,8 @@ function Header() {
                 <NavLink activeClassName='active' className="nav-link" aria-current="page" to="/contact">Contact</NavLink>
               </li>
             </ul>
-            <div className="d-flex">
-              <Link to='/cart'><button className="btn btn-outline-success" type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[0]</span></button></Link>
+            <div className="d-flex icon-cart">
+              <NavLink to='/cart'><button className="btn" activeClassName='active' type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[0]</span></button></NavLink>
             </div>
           </div>
         </div>
