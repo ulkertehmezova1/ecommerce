@@ -51,33 +51,48 @@
 .header {
   position: relative;
 }
+
 .header .header-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: #82ae46;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 11px;
   width: 100%;
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
 .header .header-top .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   vertical-align: middle;
 }
+
 .header .header-top .container .phone, .header .header-top .container .mail, .header .header-top .container .delivery {
   margin: 4px 0;
 }
+
 .header .header-top .container .phone span i, .header .header-top .container .mail span i, .header .header-top .container .delivery span i {
   margin-right: 6px;
 }
 .header .header-bottom .navbar {
   background: transparent !important;
-  font-family: "Poppins", sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
   text-transform: uppercase;
 }
 .header .header-bottom .navbar .navbar-brand {
@@ -94,7 +109,7 @@
   border: none;
   font-size: 1rem;
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: .2em;
   text-transform: uppercase;
   outline: none;
   box-shadow: none;
@@ -183,4 +198,5 @@
     color: #fff;
     background-color: #82ae46;
   }
-}/*# sourceMappingURL=header.css.map */
+}
+/*# sourceMappingURL=header.css.map */
