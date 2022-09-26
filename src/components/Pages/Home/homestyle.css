@@ -1,0 +1,16 @@
+
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+    background-color: #82ae46 !important;
+}
+.swal2-confirm {
+    background-color: #82ae46 !important;
+}
