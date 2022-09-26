@@ -160,7 +160,7 @@ function Home() {
                                             <div className={h.prod_btn} onClick={()=>dispatch({type:"SINGLE", payload:e})}> <i className="fa-solid fa-bars"></i> </div>
                                             </Link> 
                                             <div className={h.prod_btn} onClick={()=>addCart(e)}> <i className="fa-solid fa-cart-shopping"></i> </div>
-                                            {/* <div className={h.prod_btn}> <i className="fa-solid fa-heart"></i> </div> */}
+                                          <Link to="/wishlist" style={{all:"unset"}}> <div className={h.prod_btn} onClick={()=>dispatch({type:"ADDTOWISH", payload:e})}> <i className="fa-solid fa-heart"></i> </div></Link> 
                                         </div>
                                     </div>
                                 ))
