@@ -5,6 +5,65 @@ footer {
   font-family: "Poppins", Arial, sans-serif;
 }
 
+footer .footer-top .scroll button.scrolltoUp {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #82ae46;
+  position: absolute;
+  top: -30px;
+  left: calc(50% - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 111 !important;
+}
+
+footer .footer-top .scroll button.scrolltoUp i {
+  color: #fff;
+  font-size: 19px;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+  -webkit-animation: scroll_top 1.6s ease infinite;
+          animation: scroll_top 1.6s ease infinite;
+}
+
+@-webkit-keyframes scroll_top {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes scroll_top {
+  0% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
 footer .footer-top h5 {
   margin-bottom: 20px;
   font-size: 16px;
@@ -107,20 +166,5 @@ footer .footer-bottom p {
 footer .footer-bottom p a {
   text-decoration: none;
   color: #82ae46;
-}
-
-button.scrolltoUp {
-  border-radius: 100%;
-  background: #82ae46;
-  color: #fff;
-  border: none;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  position: fixed;
-  bottom: 100px;
-  right: 50px;
-  -webkit-transition: 1s;
-  transition: 1s;
 }
 /*# sourceMappingURL=footer.css.map */

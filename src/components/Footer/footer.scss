@@ -7,6 +7,45 @@ font-family: "Poppins", Arial, sans-serif;
 
 
 .footer-top{
+    .scroll{
+
+
+        button.scrolltoUp{
+          width: 60px;
+          height: 60px;
+          border: none;
+          border-radius: 50%;
+          background-color: #82ae46;
+          position: absolute;
+          top: -30px;
+          left: calc(50% - 30px);
+          display: flex;
+          justify-content: center;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 111 !important;
+
+          i{
+            color: #fff;
+            font-size: 19px;
+            transform: translateY(20px);
+            animation: scroll_top 1.6s ease infinite;
+          }
+        }
+        }
+        @keyframes scroll_top {
+            0% {
+              transform: translateY(20px);
+              opacity: 0;
+            }
+            40% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(0px);
+            }
+          }
+
 h5{
 margin-bottom: 20px;
 font-size: 16px;
@@ -100,17 +139,6 @@ color: #82ae46;
 }
 
 
-}
-button.scrolltoUp{
-border-radius: 100%;
-background: #82ae46;
-color: #fff;
-border: none;
-width: 50px;
-height: 50px;
-font-size: 18px;
-position:fixed;
-bottom:100px;
-right:50px;
-transition: 1s;
+
+
 }

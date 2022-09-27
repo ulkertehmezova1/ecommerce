@@ -9,7 +9,6 @@ import reducer from './store/index'
 import AppRouter from './components/router/AppRouter';
 import { rootReducer } from './redux/rootReducer';
 import { BrowserRouter } from 'react-router-dom';
-import BackToTopButton from './components/Footer/BackToTopButton';
 const str = createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +16,6 @@ root.render(
     <BrowserRouter>
     <Provider store={str}>
         <App />
-        <BackToTopButton/>
     </Provider>
     </BrowserRouter>
 );
