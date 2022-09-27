@@ -80,7 +80,7 @@ return (
 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 text-center">
 
 <p>
-Copyright ©2022 All rights reserved | This template is made with <i className="fa-solid fa-heart"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright ©2022 All rights reserved | This template is made with <i className="fa-solid fa-heart"></i> by <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a>
 
 </p>
 </div>
