@@ -26,7 +26,7 @@ backbutton && (
 <button 
 className='scrolltoUp' onClick={scrollUp}>
 
-<i class="fas fa-arrow-up"></i></button>
+<i className="fas fa-arrow-up"></i></button>
 )
 }
 </div>

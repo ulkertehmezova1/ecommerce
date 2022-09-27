@@ -53,32 +53,32 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link" activeClassName='active' aria-current="page" end to="/">Home</NavLink>
+                <NavLink className="nav-link" activeclassname='active' aria-current="page" end to="/">Home</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <NavLink className="nav-link dropdown-toggle"activeClassName='active' to='/shop' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <NavLink className="nav-link dropdown-toggle"activeclassname='active' to='/shop' role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Shop
                 </NavLink>
                 <ul className="dropdown-menu">
-                  <li><NavLink  activeClassName='active'className="dropdown-item" to="/shop">Shop</NavLink></li>
-                  <li><NavLink activeClassName='active' className="dropdown-item" to="/singleproduct">Single Product</NavLink></li>
-                  <li><NavLink activeClassName='active' className="dropdown-item" to="/cart">Cart</NavLink></li>
-                  <li><NavLink activeClassName='active' className="dropdown-item" to="/wishlist">Wishlist</NavLink></li>
+                  <li><NavLink  activeclassname='active'className="dropdown-item" to="/shop">Shop</NavLink></li>
+                  <li><NavLink activeclassname='active' className="dropdown-item" to="/singleproduct">Single Product</NavLink></li>
+                  <li><NavLink activeclassname='active' className="dropdown-item" to="/cart">Cart</NavLink></li>
+                  <li><NavLink activeclassname='active' className="dropdown-item" to="/wishlist">Wishlist</NavLink></li>
 
                 </ul>
               </li>
               <li className="nav-item">
-                <NavLink activeClassName='active' className="nav-link" aria-current="page" to="/about">About</NavLink>
+                <NavLink activeclassname='active' className="nav-link" aria-current="page" to="/about">About</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink activeClassName='active' className="nav-link" aria-current="page" to="/blog">Blog</NavLink>
+                <NavLink activeclassname='active' className="nav-link" aria-current="page" to="/blog">Blog</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink activeClassName='active' className="nav-link" aria-current="page" to="/contact">Contact</NavLink>
+                <NavLink activeclassname='active' className="nav-link" aria-current="page" to="/contact">Contact</NavLink>
               </li>
             </ul>
             <div className="d-flex icon-cart">
-              <NavLink to='/cart'><button className="btn" activeClassName='active' type="submit"><i class="fa-solid fa-cart-arrow-down"></i><span>[{card?.length}]</span></button></NavLink>
+              <NavLink to='/cart'><button className="btn" activeclassname='active' type="submit"><i className="fa-solid fa-cart-arrow-down"></i><span>[{card?.length}]</span></button></NavLink>
             </div>
           </div>
         </div>

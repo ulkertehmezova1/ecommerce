@@ -235,6 +235,23 @@ const initState = {
             link: 'https://www.adobe.com/',
             delay: 400
         }
+    ],
+    countUp: [
+        {
+            max: 10000,
+            text: 'happy customers'
+        },
+        {
+            max: 100,
+            text: 'branches'
+        },        {
+            max: 1000,
+            text: 'partners'
+        },
+        {
+            max: 100,
+            text: 'awards'
+        }
     ]
 }
 
