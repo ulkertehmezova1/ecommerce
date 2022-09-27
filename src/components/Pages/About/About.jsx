@@ -27,6 +27,8 @@ function About() {
   const chapter = useRef();
 
   const Visible = () => {
+    if(!chapter.current) 
+    return;
     let targetPosition = {
       top: window.pageYOffset + chapter.current.getBoundingClientRect().top,
       left: window.pageXOffset + chapter.current.getBoundingClientRect().left,

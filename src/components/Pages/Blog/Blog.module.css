@@ -258,10 +258,89 @@
   border-end-start-radius: 5px;
   font-size: 20px;
 }
+
 .sidebar {
   width: 33%;
-  border: 2px solid red;
-  padding: 10px;
+  padding: 20px 10px;
+}
+.searchBar {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin-bottom: 60px;
+}
+.search_input {
+  width: 100%;
+  height: 50px;
+  padding: 0 50px 0 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  outline: none;
+  color: #000;
+  font-size: 13px;
+  transition: 0.2s;
+}
+.search_input:focus {
+  border: 1px solid #82ae46;
+}
+.searchBar i {
+  position: absolute;
+  top: calc(50% - 9px);
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.searchBar i:hover {
+  color: #82ae46;
+}
+.filterBar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.filter_h3 {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 20px;
+}
+.filterBar label {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-transform: capitalize;
+}
+.filterBar input {
+  display: none;
+}
+.filterBar input[type="radio"]:checked + label {
+  color: #82ae46;
+}
+.skin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.emptyData {
+  padding-top: 50px;
+  text-align: center;
+  font-family: 'Poppins';
+  font-size: 30px;
+  font-weight: 400;
+  color: #82ae46;
+}
+.emptyData i {
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -278,12 +357,10 @@
     justify-content: center;
     gap: 30px;
   }
-  .blog_item_comments {
+  .blog_item_comments,
+  .sidebar {
     width: 720px;
     margin: 0 auto;
-  }
-  .sidebar {
-    width: 100%;
   }
   .blog_single_page {
     width: 100%;
@@ -305,7 +382,8 @@
     width: 480px;
     height: 280px;
   }
-  .blog_item_comments {
+  .blog_item_comments,
+  .sidebar {
     width: 480px;
   }
   .container {
@@ -319,7 +397,8 @@
   .blog_item_background {
     width: 95%;
   }
-  .blog_item_comments {
+  .blog_item_comments,
+  .sidebar {
     width: 95%;
   }
   .blog_item_info {

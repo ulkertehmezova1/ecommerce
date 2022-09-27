@@ -14,6 +14,7 @@ export const blogs = [
         back: bg1,
         name: 'Loma Linda Garden Burger with Avocado Mint Aioli',
         desc: 'Nothing goes with warm weather like a great tasting burger. This vegan garden burger recipe from ...',
+        category: 'vegetables',
         date: 'March 30 2022',
         comments: [
             {
@@ -43,6 +44,7 @@ export const blogs = [
         back: bg2,
         name: 'Vegetable Steaks',
         desc: 'This recipe is a basic beef stroganoff like meat alternative in an onion and mushroom soup sauce ...',
+        category: 'vegetables',
         date: 'October 4 2021',
         comments: [
             {
@@ -77,6 +79,7 @@ export const blogs = [
         back: bg3,
         name: 'Loma Linda Classic TUNO Salad Sandwich',
         desc: 'Create your own vegan salad sandwich using Loma Linda TUNO in three varieties, Spring Water, Lemon Pepper and Sriracha.',
+        category: 'juices',
         date: 'September 15 2021',
         comments: [
             {
@@ -116,6 +119,7 @@ export const blogs = [
         back: bg4,
         name: 'Worthington Vegan Pulled BBQ Chicketts Sandwich',
         desc: 'After a long week, you deserve a mouth watering, tangy and deliciously meaty sandwich! This mouth...',
+        category: 'fruits',
         date: 'June 30 2021',
         comments: [
             {
@@ -140,6 +144,7 @@ export const blogs = [
         back: bg5,
         name: 'Kaffree Roma Coconut Milk Latte',
         desc: 'Warm your day up as the weather starts cooling to the bold flavor and silky smooth richness of a ...',
+        category: 'dries',
         date: 'August 23 2022',
         comments: [
             {
@@ -174,6 +179,7 @@ export const blogs = [
         back: bg6,
         name: 'Loma Linda Tikka Masala Balti Pie',
         desc: 'Pie lovers rejoice!  These are ready in under 30 minutes, totally plant-based, and sure to impres...',
+        category: 'fruits',
         date: 'May 11 2022',
         comments: [
             {
@@ -200,3 +206,25 @@ export const blogs = [
     }
 ]
 
+export const filters = [
+    {
+        id: 'all',
+        text: 'all'
+    },
+    {
+        id: 'vegetables',
+        text: 'vegetables'
+    },
+    {
+        id: 'fruits',
+        text: 'fruits'
+    },
+    {
+        id: 'juices',
+        text: 'juices'
+    },
+    {
+        id: 'dries',
+        text: 'dries'
+    }
+]

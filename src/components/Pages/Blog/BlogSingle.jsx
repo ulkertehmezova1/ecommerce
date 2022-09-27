@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
 import b from './Blog.module.css'
-import './blogstyle.css'
 import { useLocation } from 'react-router-dom'
 import { blogs } from '../../../store/blogs'
 import Swal from 'sweetalert2';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import user from '../../../assets/images/blog/User.png'
 
 
 function BlogSingle() {
+
+    AOS.init({
+        duration: 500,
+        easing: 'ease'
+    });
 
     const { pathname } = useLocation();
     let itemID = pathname.substr(6);
@@ -49,41 +55,41 @@ function BlogSingle() {
     return (
         <>
             <div className={b.blog_single_page}>
-                <h2 className={b.single_h2}>
+                <h2 className={b.single_h2} data-aos="zoom-in">
                     {item.name}
                 </h2>
-                <p className={b.single_text}>
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t1}
                 </p>
-                <img src={item.img1} alt="Blog item" />
-                <p className={b.single_text}>
+                <img src={item.img1} alt="Blog item" data-aos="zoom-in" />
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t2}
                 </p>
-                <h2 className={b.single_h2}>
+                <h2 className={b.single_h2} data-aos="zoom-in">
                     #2 {item.second}
                 </h2>
-                <p className={b.single_text}>
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t3}
                 </p>
-                <img src={item.img2} alt="Blog item" />
-                <p className={b.single_text}>
+                <img src={item.img2} alt="Blog item" data-aos="zoom-in" />
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t4}
                 </p>
-                <p className={b.single_text}>
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t5}
                 </p>
-                <p className={b.single_text}>
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t6}
                 </p>
-                <p className={b.single_text}>
+                <p className={b.single_text} data-aos="zoom-in">
                     {item.t7}
                 </p>
-                <h2 className={b.single_h2} style={{ marginTop: '60px' }}>
+                <h2 className={b.single_h2} style={{ marginTop: '60px' }} data-aos="fade-up">
                     {item.comments.length} Comments
                 </h2>
                 {
                     comments.map((e, i) => (
-                        <div className={b.comment} key={i}>
+                        <div className={b.comment} key={i} data-aos="fade-up">
                             <img src={e.photo} alt="Customer" />
                             <div className={b.customer_info}>
                                 <h6>
@@ -96,23 +102,27 @@ function BlogSingle() {
                         </div>
                     ))
                 }
-                <h2 className={b.single_h2} style={{ margin: '100px 0 40px' }}>
+                <h2 className={b.single_h2} style={{ margin: '100px 0 40px' }} data-aos="fade-up">
                     Leave a comment
                 </h2>
-                <form className={b.comment_form} onSubmit={(e) => postComment(e)}>
-                    <label htmlFor="name"> Name *
+                <form className={b.comment_form} onSubmit={(e) => postComment(e)} data-aos="fade-up">
+                    <label htmlFor="name" data-aos="fade-left">
+                        Name *
                         <input type="text" id='name' />
                     </label>
-                    <label htmlFor="email"> Email
+                    <label htmlFor="email" data-aos="fade-left">
+                        Email
                         <input type="email" id='email' />
                     </label>
-                    <label htmlFor="site"> Website
+                    <label htmlFor="site" data-aos="fade-left">
+                        Website
                         <input type="text" id='site' />
                     </label>
-                    <label htmlFor="text"> Message *
+                    <label htmlFor="text" data-aos="fade-left">
+                        Message *
                         <textarea name="text" id="text" cols="30" rows="10"></textarea>
                     </label>
-                    <button className={b.btn}>
+                    <button className={b.btn} data-aos="fade-left">
                         Post Comment
                     </button>
                 </form>
