@@ -501,38 +501,6 @@
   background: #82ae46;
   outline: none;
 }
-.toTop_btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #82ae46;
-  position: absolute;
-  bottom: -30px;
-  left: calc(50% - 30px);
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 111 !important;
-}
-.toTop_btn i {
-  color: #fff;
-  font-size: 19px;
-  transform: translateY(20px);
-  animation: scroll_top 1.6s ease infinite;
-}
-@keyframes scroll_top {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
 
 @media screen and (max-width: 1200px) {
   .vege,
