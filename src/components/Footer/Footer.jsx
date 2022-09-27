@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../Footer/footer.css'
 import ScrollToTop from './ScrollTop'
 
@@ -29,10 +30,10 @@ return (
 <div className="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12">
 <h5>Menu</h5>
 <ul>
-<li><a href="#">Shop</a></li>
-<li><a href="#">About</a></li>
+<li><Link to="/shop">Shop</Link></li>
+<li><Link to="/about">About</Link></li>
 <li><a href="#">Journal</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><Link to="/contact">Contact Us</Link></li>
 </ul>
 
 </div> 
