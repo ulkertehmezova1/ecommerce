@@ -26,38 +26,38 @@ function Timer() {
 
     return (
         <>
-            <p>
+            <div>
                 <h2>
                     {days}
                 </h2>
                 <span>
                     days
                 </span>
-            </p>
-            <p>
+            </div>
+            <div>
                 <h2>
                     {hours}
                 </h2>
                 <span>
                     hours
                 </span>
-            </p>
-            <p>
+            </div>
+            <div>
                 <h2>
                     {minutes}
                 </h2>
                 <span>
                     minutes
                 </span>
-            </p>
-            <p>
+            </div>
+            <div>
                 <h2>
                     {seconds}
                 </h2>
                 <span>
                     seconds
                 </span>
-            </p>
+            </div>
         </>
     )
 }

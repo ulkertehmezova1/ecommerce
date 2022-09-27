@@ -348,7 +348,7 @@
   gap: 20px;
   padding-top: 50px;
 }
-.timer p {
+.timer div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -505,7 +505,6 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid #82ae46;
   background-color: #82ae46;
   position: absolute;
   bottom: -30px;
@@ -514,6 +513,7 @@
   justify-content: center;
   padding: 10px;
   cursor: pointer;
+  z-index: 111 !important;
 }
 .toTop_btn i {
   color: #fff;
@@ -561,7 +561,6 @@
     margin: 0 15px !important;
   }
 }
-
 @media screen and (max-width: 992px) {
   .vege,
   .vege .category {
@@ -583,7 +582,6 @@
     padding: 25px 10px 50px;
   }
 }
-
 @media screen and (max-width: 768px) {
   .why_page {
     display: flex;
@@ -649,7 +647,6 @@
     z-index: 3;
   }
 }
-
 @media screen and (max-width: 550px) {
   .why_page {
     display: flex;

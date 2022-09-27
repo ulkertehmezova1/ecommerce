@@ -7,8 +7,8 @@ function ContactSection1() {
     <div className='con-sec1'>
       <div className="container">
         <div className="row mb-5 d-flex">
-        {contact.map((contact)=>(
-            <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 info-group">
+        {contact.map((contact, i)=>(
+            <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 info-group" key={i}>
                 <div className="info p-4">
                     <p>
                         <span>{contact.title}</span>
