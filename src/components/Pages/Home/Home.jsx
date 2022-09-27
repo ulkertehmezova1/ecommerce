@@ -30,13 +30,6 @@ function Home() {
         dispatch({ type: "ADD", payload: item });
     }
 
-    const scrollTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
     const submitForm = (e) => {
         e.preventDefault();
         if (e.target.querySelector('input').value) {
@@ -306,9 +299,6 @@ function Home() {
                                 </button>
                             </form>
                         </div>
-                    </div>
-                    <div className={h.toTop_btn} onClick={scrollTop}>
-                        <i className="fa-solid fa-angle-up"></i>
                     </div>
                 </div>
             </div>
