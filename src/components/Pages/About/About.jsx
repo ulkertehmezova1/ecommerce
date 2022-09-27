@@ -77,8 +77,8 @@ function About() {
   return (
     <>
       <div className={a.about_page}>
-        <div className={a.main} id="about_mainslider">
-          <p>
+        <div className={a.main} id="page_mainslider">
+          <p data-aos="fade-up">
             <Link>
               home
             </Link>
@@ -86,7 +86,7 @@ function About() {
               about us
             </Link>
           </p>
-          <h1>
+          <h1 data-aos="fade-up" data-aos-duration="800">
             about us
           </h1>
         </div>
@@ -109,7 +109,7 @@ function About() {
                 <i className="fa-solid fa-xmark" onClick={() => setPopUp(!popUp)}></i>
               </div>
             </div>
-            <div className={a.welcome_text}>
+            <div className={a.welcome_text} data-aos="fade-up">
               <div className={a.bold_h2}>
                 Welcome to Vegefoods an eCommerce website
               </div>
@@ -150,7 +150,7 @@ function About() {
           <div className={a.overlay}>
             {
               countUp.map((e, i) => (
-                <div className={a.chapter} ref={chapter} key={i}>
+                <div className={a.chapter} ref={chapter} key={i} data-aos="fade-up">
                   <CountUp start={0} end={view ? e.max : 0} duration={2} />
                   <p> {e.text} </p>
                 </div>
