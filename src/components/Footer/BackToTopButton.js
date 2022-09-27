@@ -1,17 +1,17 @@
 import React,{useEffect,useState} from 'react';
 
 const BackToTopButton = () => {
-const [backbutton, setBackbutton] =useState(false);
+// const [backbutton, setBackbutton] =useState(false);
 
-useEffect(() =>{
-window.addEventListener("scroll",() =>{
-if(window.scrollY >100){
-setBackbutton(true) 
-} else{
-setBackbutton(false) 
-}
-} )
-},[])
+// useEffect(() =>{
+// window.addEventListener("scroll",() =>{
+// if(window.scrollY >100){
+// setBackbutton(true) 
+// } else{
+// setBackbutton(false) 
+// }
+// } )
+// },[])
 
 const scrollUp =() =>{
 window.scrollTo({
@@ -20,16 +20,14 @@ behavior:"smooth"
 })
 }
 return (
-<div>
-{
-backbutton && (
+
+
 <button 
 className='scrolltoUp' onClick={scrollUp}>
 
-<i className="fas fa-arrow-up"></i></button>
-)
-}
-</div>
+<i className="fa-solid fa-angle-up"></i></button>
+
+
 );
 };
 

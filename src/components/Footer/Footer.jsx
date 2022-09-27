@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../Footer/footer.css'
-import ScrollToTop from './ScrollTop'
+import BackToTopButton from './BackToTopButton'
+//import ScrollToTop from './ScrollTop'
+//import BackToTopButton from './components/Footer/BackToTopButton';
+
 
 function Footer() {
 return (
@@ -11,8 +14,7 @@ return (
 
 <div className="row">
 <div className="scroll">
-<ScrollToTop/>
-
+  <BackToTopButton/>
 </div>
 <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12">
 
@@ -42,7 +44,7 @@ return (
 <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12">
 <h5>Help</h5>
 <div className="row">
-<div className="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6">
+<div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6">
 <ul>
 <li><a href="#">Shipping Information</a></li>
 <li><a href="#">Returns & Exchange</a></li>
@@ -50,7 +52,7 @@ return (
 <li><a href="#">Privacy Policy</a></li>
 </ul>
 </div>
-<div className="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6">
+<div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6">
 <ul>
 <li><a href="#">FAQs</a></li>
 <li><a href="#">Contact</a></li>
