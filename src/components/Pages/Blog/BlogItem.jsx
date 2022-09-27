@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import b from './Blog.module.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -12,9 +12,6 @@ function BlogItem({ e }) {
     });
 
     const [com, setCom] = useState(false);
-
-    const { pathname } = useLocation();
-    console.log(pathname.substr(-3));
 
     return (
         <>

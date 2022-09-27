@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import b from './Blog.module.css'
-import './blogstyle.css'
 import { blogs } from '../../../store/blogs'
 import { Link, useLocation } from 'react-router-dom'
 import BlogItem from './BlogItem'
@@ -17,6 +16,8 @@ function Blog() {
   });
 
   const { pathname } = useLocation();
+
+  const [data, setData] = useState(blogs)
 
   return (
     <>
@@ -39,15 +40,21 @@ function Blog() {
             pathname.endsWith('blog') || pathname.endsWith('blog/') ?
               <div className={b.all_blogs}>
                 {
-                  blogs.map(e => (
-                    <BlogItem e={e} key={e.id} />
-                  ))
+                  data.length > 0 ?
+                    data.map(e => (
+                      <BlogItem e={e} key={e.id} />
+                    ))
+                    :
+                    <h2 className={b.emptyData}>
+                      <i className="fa-regular fa-face-frown"></i><br/>
+                      Unfortunately, there is no blog for such parameters
+                    </h2>
                 }
               </div>
               :
               <BlogSingle />
           }
-          <Sidebar />
+          <Sidebar setData={setData} />
         </div>
       </div>
     </>
