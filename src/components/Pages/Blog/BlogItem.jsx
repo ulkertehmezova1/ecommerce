@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import b from './Blog.module.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -12,15 +13,17 @@ function BlogItem({ e }) {
 
     const [com, setCom] = useState(false);
 
+    const { pathname } = useLocation();
+    console.log(pathname.substr(-3));
 
     return (
         <>
             <div className={b.blog_item} data-aos="fade-up">
                 <div className={b.in_blog_item}>
-                    <div className={b.blog_item_background}
+                    <Link to={`/blog/${e.id}`} className={b.blog_item_background}
                         style={{ backgroundImage: `url(${e.back})`, cursor: 'pointer' }}
                     >
-                    </div>
+                    </Link>
                     <div className={b.blog_item_info}>
                         <span> {e.date}
                             <span className={b.comment_icon} onClick={() => setCom(!com)}>
@@ -30,11 +33,13 @@ function BlogItem({ e }) {
                                 </sup>
                             </span>
                         </span>
-                        <h4> {e.name} </h4>
+                        <Link to={`/blog/${e.id}`} className={b.h4}>
+                            {e.name}
+                        </Link>
                         <p className={b.default_p}> {e.desc} </p>
-                        <div className={b.btn}>
+                        <Link to={`/blog/${e.id}`} className={b.btn}>
                             Read more
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className={com ? b.blog_item_comments + ' ' + b.show_comments : b.blog_item_comments}>
