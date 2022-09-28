@@ -1,5 +1,7 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react'
+import Swal from 'sweetalert2';
+
 
 function ContactSection2() {
     const form = useRef();
@@ -7,18 +9,34 @@ function ContactSection2() {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        if (e.target.querySelector('input').value) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Your message have been sent successfully',
+              text: 'We will periodically send you updates and special offers'
+            });
+            e.target.reset();
+          }
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Enter your e-mail, please!'
+            });
+        }
+
         emailjs.sendForm(
             "service_id4a8sc",
             'template_59ztiin',
             form.current,
             'qIaLyS3lNkUu1vQ56'
         )
-            .then((result) => {
-                console.log(result.text);
-                alert("Your message send:)");
-            }, (error) => {
-                console.log(error.text);
-            });
+            // .then((result) => {
+            //     console.log(result.text);
+            //     alert("Your message send:)");
+            // }, (error) => {
+            //     console.log(error.text);
+            // });
     };
 
     return (
