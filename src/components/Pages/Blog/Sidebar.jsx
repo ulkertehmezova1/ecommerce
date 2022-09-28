@@ -3,37 +3,42 @@ import { useLocation } from 'react-router-dom'
 import s from './Blog.module.css'
 import { blogs, filters } from '../../../store/blogs'
 
-function Sidebar({ setData }) {
+function Sidebar({ setFilteredData }) {
 
     const { pathname } = useLocation();
     const [value, setValue] = useState('');
     const [active, setActive] = useState('all');
+    const [data, setData] = useState([])
 
     const checked = (e) => {
         setActive(e.target.id)
     }
 
     useEffect(() => {
-        setData(blogs.filter(a => {
+        if (active !== 'all') {
+            let filtered = blogs.filter(e => e.category === active);
+            setFilteredData(filtered);
+            setData(filtered);
+        }
+        else {
+            setFilteredData(blogs);
+            setData(blogs);
+        }
+    }, [active, setFilteredData])
+
+    useEffect(() => {
+        setFilteredData(data.filter(a => {
             return a.name.toLowerCase().includes(value.toLowerCase()) ||
                 a.desc.toLowerCase().includes(value.toLowerCase()) ||
                 a.category.toLowerCase().includes(value.toLowerCase())
         }));
-    }, [value, setData]);
+    }, [value, data, setFilteredData]);
 
-    useEffect(() => {
-        if (active !== 'all') {
-            let filtered = blogs.filter(e => e.category === active);
-            setData(filtered);
-        }
-        else {
-            setData(blogs);
-        }
-    }, [active, setData])
 
     useEffect(() => {
         setValue('')
-    },[pathname])
+    }, [pathname])
+
 
     return (
         <>
@@ -60,7 +65,10 @@ function Sidebar({ setData }) {
                             </div>
                         ))
                     }
-                    <div className={pathname[pathname.length - 1] > 0 ? s.skin : ''}></div>
+                    <div className={pathname[pathname.length - 1] > 0 ? s.skin : ''}
+                        title='To select a category, go back to the blogs page, please'
+                    >
+                    </div>
                 </div>
             </div>
         </>
