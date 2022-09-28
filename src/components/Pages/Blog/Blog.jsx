@@ -15,8 +15,9 @@ function Blog() {
   });
 
   const { pathname } = useLocation();
-
   const [filteredData, setFilteredData] = useState([]);
+
+
 
   return (
     <>
@@ -37,7 +38,7 @@ function Blog() {
         <div className={b.container}>
           {
             pathname.endsWith('blog') || pathname.endsWith('blog/') ?
-              <div className={b.all_blogs}>
+              <div className={b.all_blogs} id="#allBlogs">
                 {
                   filteredData.length > 0 ?
                     filteredData.map(e => (

@@ -298,6 +298,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-bottom: 60px;
 }
 .filter_h3 {
   font-family: "Poppins", Arial, sans-serif;
@@ -333,7 +334,7 @@
 .emptyData {
   padding-top: 50px;
   text-align: center;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 30px;
   font-weight: 400;
   color: #82ae46;
@@ -341,6 +342,45 @@
 .emptyData i {
   font-size: 50px;
   margin-bottom: 20px;
+}
+.recent_item {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 0.5px solid transparent;
+  transition: 0.2s;
+}
+.recent_item:hover {
+  border: 0.5px solid #83ae464b;
+}
+.recent_item_img {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.recent_item h5 {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 300;
+  color: #222222;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+.recent_item h5:hover {
+  color: #82ae46;
+}
+.rec_info {
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+}
+.rec_info span {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  color: #888888;
 }
 
 @media screen and (max-width: 1200px) {
