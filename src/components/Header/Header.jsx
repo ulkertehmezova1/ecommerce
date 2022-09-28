@@ -56,7 +56,7 @@ function Header() {
                 <NavLink className="nav-link" activeclassname='active' aria-current="page" end to="/">Home</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <NavLink className="nav-link dropdown-toggle"activeclassname='active' to='/shop' role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <NavLink className="nav-link dropdown-toggle"activeclassname='active' to='/shop' role="button" data-bs-toggle="collapse" aria-expanded="false">
                   Shop
                 </NavLink>
                 <ul className="dropdown-menu">
