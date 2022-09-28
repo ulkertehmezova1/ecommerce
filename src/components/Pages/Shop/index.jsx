@@ -27,11 +27,26 @@ export const Shop = () => {
             <div className='div-img'>
                 <h1>Products</h1>
             </div>
+            {/* <div className='display'> */}
             <div className='button-group'>
+                <Grid container spacing={'0px'} justifyContent={'center'} alignItems={"center"} 
+                // flexWrap={"wrap"}
+                 >
+                    <Grid item xs={12} lg={3} md={3} sm={3} >
                 <button onClick={() => dispatch({ type: "ALL" })}>All</button>
+                </Grid>
+                <Grid item xs={12} lg={3} md={3} sm={3} >
                 <button onClick={() => dispatch({ type: "FILTER", payload: "Vegetables" })}>Vegetables</button>
-                <button onClick={() => dispatch({ type: "FILTER", payload: "Fruits" })}>Fruits</button>
-                <button onClick={() => dispatch({ type: "FILTER", payload: "Juice" })}>Juice</button>
+                </Grid>
+               <Grid item xs={12} lg={3} md={3} sm={3} >
+               <button onClick={() => dispatch({ type: "FILTER", payload: "Fruits" })}>Fruits</button>
+               </Grid>
+               <Grid item xs={12} lg={3} md={3} sm={3}>
+               <button onClick={() => dispatch({ type: "FILTER", payload: "Juice" })}>Juice</button>
+               </Grid>
+                </Grid>
+              
+            {/* </div> */}
             </div>
             <div style={{ padding: "30px" }}>
                 <Grid container>
