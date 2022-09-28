@@ -3,6 +3,7 @@
     width: 100%;
     margin-bottom: 30%;
     border: 1px solid #f0f0f0;
+    height: 350px;
     position: relative;
     font-size: 15px;
     font-weight: 400;
@@ -120,12 +121,9 @@
        }
     }
     .button-group{
-        display: flex;
-      
-        align-items: center;
-        justify-content: center;
+        width: 100%;
         margin-top: 30px;
-
+        text-align: center;
         button{
             all: unset;
 background-color: #82ae46;
@@ -137,3 +135,5 @@ cursor: pointer;
 
         }
     }
+
+ 
