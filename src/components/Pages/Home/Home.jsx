@@ -293,7 +293,7 @@ function Home() {
                         </div>
                         <div className={h.in_cont}>
                             <form onSubmit={(e) => submitForm(e)}>
-                                <input type="email" placeholder='Enter email address' />
+                                <input type="email" placeholder='Enter email addres' />
                                 <button>
                                     Subscribe
                                 </button>
