@@ -11,6 +11,11 @@ import BlogSingle from '../Pages/Blog/BlogSingle'
 import { Shop } from '../Pages/Shop'
 import { SingleProduct } from '../Pages/SingleProduct'
 import WishList from '../Pages/WishList'
+import SignUp from '../Pages/Signup'
+import { HeaderLayout } from './HeaderLayout'
+import ProtectedRoutes from './ProtectedRoutes.'
+import Login from '../Login'
+import ProtectedLoginRoutes from './ProtectedLoginRoute'
 
 
 function AppRouter() {
@@ -23,19 +28,28 @@ function AppRouter() {
 
   return (
     <div>
-      <Header />
+     {/* <Header /> */}
       <Routes>
-        <Route path='/' element={<Home />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/login" element={<Login />} />
+      <Route element={<HeaderLayout />}>
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog/*" element={<Blog />} />
+        <Route path="/shop" element={< Shop />} />
         <Route path="/blog/*" element={<BlogSingle />} />
         <Route path='/contact' element={<Contact />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route element={<ProtectedLoginRoutes />}>
+      <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/shop" element={< Shop />} />
         <Route path="/singleproduct" element={<SingleProduct />} />
         <Route path="/wishlist" element={<WishList />} />
+        </Route>
+        </Route>
+        </Route>
+       
       </Routes>
-      <Footer />
     </div>
   )
 }

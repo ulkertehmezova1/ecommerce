@@ -1,0 +1,59 @@
+.signup {
+  width: 50%;
+}
+.signup label {
+  display: block;
+  font-size: 13px;
+  margin: 5px;
+}
+.signup input {
+  width: 100%;
+  padding: 5px;
+}
+.signup input + p {
+  color: red;
+  font-size: 14px;
+}
+.signup form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.signup form div {
+  width: 60%;
+}
+.signup h1 {
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+}
+.signup button {
+  all: unset;
+  padding: 10px 50px;
+  background-color: #53B1FB;
+  cursor: pointer;
+  color: white;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.d-flex-sign {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.img-signup {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

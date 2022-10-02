@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import '../Header/header.css'
 import {useSelector} from 'react-redux';
+import PersonIcon from '@mui/icons-material/Person';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 
 function Header() { 
+  const navigate=useNavigate();
  const [sticky,setSticky] =useState('');
  const card=useSelector((state)=>state.card);
 
@@ -23,7 +28,21 @@ function Header() {
  };
  const classes = `header-bottom  ${sticky}`;
 
+ const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
  
+    
+  };
+  const handlelogOut=()=>{
+    localStorage.removeItem("logEmail");
+    localStorage.removeItem("logPass");
+    navigate("/");
+  }
 
   return (
     <div className='header'>
@@ -79,6 +98,32 @@ function Header() {
             </ul>
             <div className="d-flex icon-cart">
               <NavLink to='/cart'><button className="btn" activeclassname='active' type="submit"><i className="fa-solid fa-cart-arrow-down"></i><span>[{card?.length}]</span></button></NavLink>
+            </div>
+            <div className="d-flex">
+              <button 
+            style={{all:"unset", margin:"5px", display:'flex'}}
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+            >
+        <PersonIcon />
+        <p>{localStorage.getItem("logEmail")}</p>
+        </button>
+        <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+      { localStorage.getItem("logEmail")? <MenuItem onClick={handleClose}><p onClick={handlelogOut}>Logout</p></MenuItem> : ""}
+        <MenuItem onClick={handleClose}><p onClick={()=>navigate('/login')}>SignIn</p></MenuItem>
+        <MenuItem><p onClick={handlelogOut}>SignUp</p></MenuItem>
+      </Menu>
             </div>
           </div>
         </div>

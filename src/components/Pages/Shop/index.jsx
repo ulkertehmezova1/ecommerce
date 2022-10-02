@@ -7,17 +7,20 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { products } from '../../../store/products.js';
 import { useDispatch, useSelector } from 'react-redux';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+
 
 export const Shop = () => {
-    const card = useSelector((state) => state.card);
+    const navigate=useNavigate();
+    const signup=useSelector((state)=>state.signup.signUp)
     const singlepro = useSelector((state) => state.singleObject);
     const filteredArr = useSelector((state) => state.filteredArr);
 
     const dispatch = useDispatch();
 
     const addCart = (item) => {
-        dispatch({ type: "ADD", payload: item });
+    dispatch({ type: "ADD", payload: item });
+
     }
 
     console.log(singlepro)
@@ -72,7 +75,9 @@ export const Shop = () => {
                                             </div>
                                         </div>
                                         <div className='overlay'>
-                                            <Link to='/cart'><div className='icon' onClick={() => addCart(product)}><button ><ShoppingCartIcon /></button></div></Link>
+                                            <Link to='/cart'>
+                                                <div className='icon' onClick={() => addCart(product)}><button ><ShoppingCartIcon /></button></div>
+                                                </Link>
                                             <Link to="/singleproduct"><div className='icon' onClick={() => dispatch({ type: "SINGLE", payload: product })}><button><MenuIcon /></button></div></Link>
                                             <Link to="/wishlist"><div className='icon' onClick={() => dispatch({ type: "ADDTOWISH", payload: product })}><button><FavoriteIcon /></button></div></Link>
                                         </div>
