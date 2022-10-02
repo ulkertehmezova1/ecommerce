@@ -32,7 +32,7 @@ function AppRouter() {
       <Routes>
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
-      <Route element={<HeaderLayout />}>
+      {/* <Route element={<HeaderLayout />}> */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog/*" element={<Blog />} />
@@ -47,7 +47,7 @@ function AppRouter() {
         <Route path="/wishlist" element={<WishList />} />
         </Route>
         </Route>
-        </Route>
+        {/* </Route> */}
        
       </Routes>
     </div>
