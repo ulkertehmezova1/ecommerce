@@ -47,7 +47,7 @@ function Blog() {
                     :
                     <h2 className={b.emptyData}>
                       <i className="fa-regular fa-face-frown"></i><br />
-                      Unfortunately, there is no blog for such parameters
+                      Unfortunately, there is no blog for such parameter
                     </h2>
                 }
               </div>
