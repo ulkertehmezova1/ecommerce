@@ -14,7 +14,7 @@ const navigate=useNavigate();
 const onSubmit = data => {
   localStorage.setItem("Email", data.email);
   localStorage.setItem("Password", data.password);
-  console.log(data);
+  navigate("/login");
 };
   return (
   <>

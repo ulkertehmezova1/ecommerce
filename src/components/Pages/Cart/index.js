@@ -9,6 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import './style.css'
 
@@ -95,35 +96,52 @@ export const Cart = () => {
           <div>
             <Grid container justifyContent={'space-between'} alignItems={"flex-start"}>
               <Grid item xs={12} lg={4} md={4}>
+                <form onSubmit={(e)=>{
+                  e.preventDefault();
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Coupon code succsessfully applied',
+                    text: 'We will periodically send you updates and special offers'
+                  });
+
+                }}>
                 <div className='form content'>
                   <h3>Coupon code</h3>
                   <p>Enter your cupon code if you have one</p>
                   <label for="cupon">Coupon code</label>
-
-                  <input type="text" id="cupon" />
+                  <input type="text" id="cupon" required/>
                 </div>
-                <button className='submit'>Apply Coupon</button>
+                <button className='submit' type='submit'>Apply Coupon</button>
+                </form>
               </Grid>
 
               <Grid item xs={12} lg={4} md={4}>
+                <form onSubmit={(e)=>{
+                  e.preventDefault();
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Succes estimate',
+                    text: 'We will periodically send you updates and special offers'
+                  });
+                }}>
                 <div className='form content'>
                   <h3>Estimate Shipping and Tax</h3>
                   <p>Enter your destination to get a shipping estimate</p>
                   <div>
                     <label for="country">Country</label>
-                    <input type="text" id="country" />
+                    <input type="text" id="country" required />
                   </div>
                   <div>
                     <label for="state">State/Province</label>
-                    <input type="text" id="state" />
+                    <input type="text" id="state" required />
                   </div>
                   <div>
                     <label for="zip">Zip/Postal Code</label>
-                    <input type="text" id="zip" />
+                    <input type="text" id="zip" required/>
                   </div>
                 </div>
-                <button className='submit'>Estimate</button>
-
+                <button className='submit' type='submit'>Estimate</button>
+                </form>
               </Grid>
 
               <Grid item xs={12} lg={4} md={4}>
@@ -148,7 +166,14 @@ export const Cart = () => {
                   </p>
 
                 </div>
-                <button className='submit'>Proceed</button>
+                <button className='submit' onClick={()=>{
+  Swal.fire({
+    icon: 'success',
+    title: "Your order saved",
+    text: 'We will periodically send you updates and special offers'
+  });
+                   
+                }} >Proceed</button>
               </Grid>
             </Grid>
 

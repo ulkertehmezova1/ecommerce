@@ -120,9 +120,8 @@ function Header() {
           'aria-labelledby': 'basic-button',
         }}
       >
-      { localStorage.getItem("logEmail")? <MenuItem onClick={handleClose}><p onClick={handlelogOut}>Logout</p></MenuItem> : ""}
-        <MenuItem onClick={handleClose}><p onClick={()=>navigate('/login')}>SignIn</p></MenuItem>
-        <MenuItem><p onClick={handlelogOut}>SignUp</p></MenuItem>
+      { localStorage.getItem("logEmail")? <MenuItem onClick={handleClose}><p onClick={handlelogOut}>Logout</p></MenuItem> : <MenuItem onClick={handleClose}><p onClick={()=>navigate("/login")}>LogIn</p></MenuItem>}
+        <MenuItem><p onClick={()=>navigate('/signup')}>SignUp</p></MenuItem>
       </Menu>
             </div>
           </div>
